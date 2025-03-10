@@ -293,6 +293,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/dataqti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dataqti.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/dcfd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dcfd.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/dpmQmiMgr.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dpmQmiMgr.rc \
+    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/dumpstate-xiaomi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dumpstate-xiaomi.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/hw/init.batterysecret.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.batterysecret.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/hw/init.mi_thermald.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mi_thermald.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/hw/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.rc \
@@ -1327,6 +1328,7 @@ PRODUCT_PACKAGES += \
     vendor.rongcard.eid-V1-ndk_platform \
     vendor.xiaomi.hardware.aidl.mtdservice-V1-ndk_platform \
     vendor.xiaomi.hardware.aidl.tidaservice-V1-ndk_platform \
+    vendor.xiaomi.hardware.blackbox-V1-ndk \
     vendor.xiaomi.hardware.display.mihwcextension-V1-ndk \
     vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk \
     vendor.xiaomi.hardware.dtool1-V1-ndk \
@@ -1430,6 +1432,7 @@ PRODUCT_PACKAGES += \
     QtiTelephony \
     ims \
     qcrilmsgtunnel \
+    androidx.camera.extensions.impl \
     uimgbalibrary \
     uimgbamanagerlibrary \
     uimservicelibrary \
@@ -1478,6 +1481,7 @@ PRODUCT_PACKAGES += \
     datafactoryservice-saidl.xml \
     deviceinfo-saidl.xml \
     dpm-saidl.xml \
+    dumpstate-xiaomi.xml \
     eid-default.xml \
     imsdcservice-saidl.xml \
     manifest_identity_credential.xml \
@@ -1556,6 +1560,7 @@ PRODUCT_PACKAGES += \
     hdcp2p2prov \
     android.hardware.bluetooth@1.1-service-qti \
     android.hardware.contexthub-service.qmi \
+    android.hardware.dumpstate-service.xiaomi \
     android.hardware.gatekeeper-service-qti \
     android.hardware.secure_element-service.qti \
     android.hardware.security.keymint-service-qti \
