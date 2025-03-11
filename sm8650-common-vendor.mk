@@ -371,7 +371,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/vendor.sensors.qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.sensors.qti.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/vendor.sensors.sscrpcd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.sensors.sscrpcd.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.displayfeature_aidl-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.displayfeature_aidl-service.rc \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.micharge-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.micharge-service.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/vmmgr.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vmmgr.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/vppservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vppservice.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/wfdvndservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wfdvndservice.rc \
@@ -1334,7 +1333,6 @@ PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.dtool1-V1-ndk \
     vendor.xiaomi.hardware.fx.tunnel-V1-ndk \
     vendor.xiaomi.hardware.mfidoca-V1-ndk_platform \
-    vendor.xiaomi.hardware.micharge-V2-ndk \
     vendor.xiaomi.hardware.mlipay-V1-ndk_platform \
     vendor.xiaomi.hw.touchfeature-V1-ndk_platform \
     vendor.xiaomi.sensor.citsensorservice-V1-ndk \
@@ -1525,7 +1523,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.qspa-service.xml \
     vendor.qti.qspmhal-service.xml \
     vendor.xiaomi.hardware.displayfeature_aidl-service.xml \
-    vendor.xiaomi.hardware.micharge.xml \
     vendor.xiaomi.hardware.quickcamera.xml \
     AHBF-V3-service.xml \
     android.hardware.gnss-aidl-service-qti.xml \
@@ -1593,12 +1590,14 @@ PRODUCT_PACKAGES += \
     vendor.qti.sla.service@1.0-service \
     vendor.rongcard.eid@1.0-service \
     vendor.xiaomi.hardware.displayfeature_aidl-service \
-    vendor.xiaomi.hardware.micharge-service \
     ims-dataservice-daemon \
     ims_rtp_daemon \
     imsdaemon \
     init.class_main \
     init.kernel.post_boot-pineapple \
+    init.kernel.post_boot-pineapple_2_3_1_1 \
+    init.kernel.post_boot-pineapple_2_3_2_0 \
+    init.kernel.post_boot-pineapple_default_2_3_2_1 \
     init.kernel.post_boot \
     init.qcom.class_core \
     init.qcom.early_boot \

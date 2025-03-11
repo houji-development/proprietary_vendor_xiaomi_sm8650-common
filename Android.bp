@@ -23025,31 +23025,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.xiaomi.hardware.micharge-V2-ndk",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.xiaomi.hardware.micharge-V2-ndk.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.xiaomi.hardware.mlipay-V1-ndk_platform",
     owner: "xiaomi",
     strip: {
@@ -26512,15 +26487,6 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "vendor.xiaomi.hardware.micharge.xml",
-    owner: "xiaomi",
-    src: "proprietary/vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "vendor.xiaomi.hardware.quickcamera.xml",
     owner: "xiaomi",
     src: "proprietary/vendor/etc/vintf/manifest/vendor.xiaomi.hardware.quickcamera.xml",
@@ -28436,38 +28402,6 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "vendor.xiaomi.hardware.micharge-service",
-    owner: "xiaomi",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/vendor.xiaomi.hardware.micharge-service",
-            ],
-            shared_libs: [
-                "libbase",
-                "liblog",
-                "libcutils",
-                "libhardware",
-                "libutils",
-                "libbinder_ndk",
-                "vendor.xiaomi.hardware.micharge-V2-ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
     name: "ims-dataservice-daemon",
     owner: "xiaomi",
     target: {
@@ -28587,6 +28521,30 @@ sh_binary {
     owner: "xiaomi",
     src: "proprietary/vendor/bin/init.kernel.post_boot-pineapple.sh",
     filename: "init.kernel.post_boot-pineapple.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-pineapple_2_3_1_1",
+    owner: "xiaomi",
+    src: "proprietary/vendor/bin/init.kernel.post_boot-pineapple_2_3_1_1.sh",
+    filename: "init.kernel.post_boot-pineapple_2_3_1_1.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-pineapple_2_3_2_0",
+    owner: "xiaomi",
+    src: "proprietary/vendor/bin/init.kernel.post_boot-pineapple_2_3_2_0.sh",
+    filename: "init.kernel.post_boot-pineapple_2_3_2_0.sh",
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "init.kernel.post_boot-pineapple_default_2_3_2_1",
+    owner: "xiaomi",
+    src: "proprietary/vendor/bin/init.kernel.post_boot-pineapple_default_2_3_2_1.sh",
+    filename: "init.kernel.post_boot-pineapple_default_2_3_2_1.sh",
     soc_specific: true,
 }
 
