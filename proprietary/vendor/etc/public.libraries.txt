@@ -12,3 +12,4 @@ libmiocr.so
 libmiphone_capture_bokeh.so
 libQEGA.qti.so
 libanc_single_bokeh.so
+libSEGModel.so

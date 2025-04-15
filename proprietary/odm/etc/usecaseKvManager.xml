@@ -1398,6 +1398,12 @@
         </devicepp>
         <!--IN Wired headset_IN DevicePPs -->
         <devicepp id="PAL_DEVICE_IN_WIRED_HEADSET">
+            <keys_and_values StreamType="PAL_STREAM_DEEP_BUFFER" CustomConfig="va-mic-asr">
+                <!-- DEVICETX - HEADPHONE_MIC -->
+                <graph_kv key="0xA3000000" value="0xA3000003"/>
+                <!-- DEVICEPP_TX - DEVICEPP_TX_RECORDING_ASR -->
+                <graph_kv key="0xAD000000" value="0xAD000400"/>
+            </keys_and_values>
             <keys_and_values StreamType="PAL_STREAM_DEEP_BUFFER,PAL_STREAM_COMPRESSED">
                 <!-- DEVICETX - HEADPHONE_MIC -->
                 <graph_kv key="0xA3000000" value="0xA3000003"/>
@@ -1565,6 +1571,20 @@
                 <!-- DEVICEPP_TX - DEVICEPP_TX_CUSTOM_ECNS -->
                 <graph_kv key="0xAD000000" value="0xAD000025"/>
             </keys_and_values>
+            <keys_and_values StreamType="PAL_STREAM_VOICE_UI"
+                DevicePPType="DUAL_MIC_16KHZ_16BIT_CUSTOM_NS_RAW">
+                <!-- DEVICETX - HANDSETMIC_VA -->
+                <graph_kv key="0xA3000000" value="0xA3000006"/>
+                <!-- DEVICEPP_TX - DEVICEPP_TX_CUSTOM_NS_RAW -->
+                <graph_kv key="0xAD000000" value="0xAD001500"/>
+            </keys_and_values>
+            <keys_and_values StreamType="PAL_STREAM_VOICE_UI"
+                DevicePPType="DUAL_MIC_48KHZ_16BIT_CUSTOM_ECNS_RAW">
+                <!-- DEVICETX - HANDSETMIC_VA -->
+                <graph_kv key="0xA3000000" value="0xA3000006"/>
+                <!-- DEVICEPP_TX - DEVICEPP_TX_CUSTOM_ECNS -->
+                <graph_kv key="0xAD000000" value="0xAD001400"/>
+            </keys_and_values>
         </devicepp>
         <!-- IN Headset VA MIC  DevicePPs -->
         <devicepp id="PAL_DEVICE_IN_HEADSET_VA_MIC">
@@ -1630,6 +1650,20 @@
                 <graph_kv key="0xA3000000" value="0xA3000007"/>
                 <!-- DEVICEPP_TX - DEVICEPP_TX_CUSTOM_NS -->
                 <graph_kv key="0xAD000000" value="0xAD000026"/>
+            </keys_and_values>
+            <keys_and_values StreamType="PAL_STREAM_VOICE_UI"
+                DevicePPType="SINGLE_MIC_16KHZ_16BIT_HEADSET_CUSTOM_NS_RAW">
+                <!-- DEVICETX - HEADSETMIC_VA -->
+                <graph_kv key="0xA3000000" value="0xA3000007"/>
+                <!-- DEVICEPP_TX - DEVICEPP_TX_CUSTOM_NS_RAW -->
+                <graph_kv key="0xAD000000" value="0xAD001500"/>
+            </keys_and_values>
+            <keys_and_values StreamType="PAL_STREAM_VOICE_UI"
+                DevicePPType="SINGLE_MIC_16KHZ_16BIT_HEADSET_CUSTOM_ECNS_RAW">
+                <!-- DEVICETX - HEADSETMIC_VA -->
+                <graph_kv key="0xA3000000" value="0xA3000007"/>
+                <!-- DEVICEPP_TX - DEVICEPP_TX_CUSTOM_ECNS -->
+                <graph_kv key="0xAD000000" value="0xAD001400"/>
             </keys_and_values>
         </devicepp>
        <!-- IN BT A2DP DevicePPs -->

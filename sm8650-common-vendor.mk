@@ -296,7 +296,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/hw/init.batterysecret.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.batterysecret.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/hw/init.mi_thermald.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mi_thermald.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/hw/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.rc \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/hw/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/hw/init.qti.kernel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qti.kernel.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/ims-dataservice-daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ims-dataservice-daemon.rc \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/init/ims_rtp_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ims_rtp_daemon.rc \
@@ -415,7 +414,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/models/acd/event.eai:$(TARGET_COPY_OUT_VENDOR)/etc/models/acd/event.eai \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/models/acd/music.eai:$(TARGET_COPY_OUT_VENDOR)/etc/models/acd/music.eai \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/models/acd/speech.eai:$(TARGET_COPY_OUT_VENDOR)/etc/models/acd/speech.eai \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/nfcon.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/nfcon.pnscr \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/perf/avcsysnodesconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/avcsysnodesconfigs.xml \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/perf/commonresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/commonresourceconfigs.xml \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/perf/commonsysnodesconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/commonsysnodesconfigs.xml \
@@ -513,26 +511,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sensors/sns_reg_config:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sns_reg_config \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sla/slad.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sla/slad.conf \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_bootup.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_bootup.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_ese_disableIso.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_ese_disableIso.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_ese_disableIsoRead.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_ese_disableIsoRead.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_nfcon.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_nfcon.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_chr.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_chr.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_cui.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_cui.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_3.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_3.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_3_hce.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_3_hce.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_aclog.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_aclog.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_cplc.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_cplc.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_fabkey.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_fabkey.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_free.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_free.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_keyset.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_keyset.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_sei2c_disable.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_sei2c_disable.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_sei2c_enable.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_sei2c_enable.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_sei2c_read.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_sei2c_read.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ese_sn.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_sn.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_ndi.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ndi.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_pcv.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_pcv.pnscr \
-    vendor/xiaomi/sm8650-common/proprietary/vendor/etc/sn100u_pnx_sst.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_sst.pnscr \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/ssg/ta_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/ssg/ta_config.json \
     vendor/xiaomi/sm8650-common/proprietary/vendor/etc/ssg/tz_whitelist.json:$(TARGET_COPY_OUT_VENDOR)/etc/ssg/tz_whitelist.json \
@@ -1620,11 +1598,6 @@ PRODUCT_PACKAGES += \
     pm-proxy \
     pm-service \
     pm_ioctl_app \
-    pnscr \
-    pnscr-mi \
-    pnscr-rf \
-    pnscr-sst \
-    pnscr-v5 \
     port-bridge \
     power_off_alarm \
     poweropt-service \

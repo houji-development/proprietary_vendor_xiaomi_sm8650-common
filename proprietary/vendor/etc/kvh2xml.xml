@@ -190,6 +190,9 @@
       <VALUE val="0xac000e00" name="DevicePP_TX_SatelliteCall"/>
       <VALUE val="0xad001000" name="Voice_Fluence_Endfire_Flip_Fold"/>
       <VALUE val="0xad002000" name="DEVICEPP_TX_VPNR"/>
+      <VALUE val="0xad003000" name="DEVICEPP_TX_VOICE_FLUENCE_SURROUND"/>
+      <VALUE val="0xad001400" name="CUSTOM_ECNS_RAW" description="Used in NLPI use-cases for VUI with custom config"/>
+      <VALUE val="0xad001500" name="CUSTOM_NS_RAW" description="Used in LPI use-cases for VUI with custom config"/>
     </KEY>
     <KEY name="StreamPP_RX" id="0xaf000000" description="Rx Stream Post/Pre Processing Chain">
       <VALUE val="0xaf000001" name="StreamPP_Rx_Default"/>
