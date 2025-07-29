@@ -786,6 +786,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/audio.primary.pineapple.so",
             ],
             shared_libs: [
+                "libaudioroute-v34",
                 "libbase",
                 "liblog",
                 "libcutils",
@@ -4548,6 +4549,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libdlbdsservice.so",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "libutils",
                 "libcutils",
                 "libstagefright_foundation",
@@ -4583,6 +4585,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libdlbpreg.so",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -9395,6 +9398,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libqcc_sdk.so",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "libcutils",
                 "liblog",
                 "libutils",
@@ -11383,6 +11387,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libqms_client.so",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "liblog",
                 "libbinder",
                 "libutils",
@@ -11410,6 +11415,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libqms_xiaomi.so",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "liblog",
                 "libbinder",
                 "libutils",
@@ -16639,6 +16645,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/soundfx/libdlbvol.so",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -16757,6 +16764,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/soundfx/libhwdap.so",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "libspatializerparamstorage",
                 "liblog",
                 "libutils",
@@ -17453,6 +17461,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.libdpmframework.so",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "libhidlbase_shim",
                 "libdiag",
                 "libbinder",
@@ -28688,6 +28697,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/qcc-vendor",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "libcutils",
                 "liblog",
                 "libutils",
@@ -30142,6 +30152,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/xtra-daemon",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "libutils",
                 "libcutils",
                 "libcrypto",
