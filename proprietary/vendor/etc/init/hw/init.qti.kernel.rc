@@ -92,17 +92,29 @@ on boot && property:ro.boot.ramdump=enable
     chown root system /dev/block/sda33
     chmod 0660 /dev/block/sda33
 
-on boot && property:ro.boot.ramdump=enable && property:ro.build.product=chenfeng
+on boot && property:ro.boot.ramdump=enable && property:ro.product.device=chenfeng
     chown root system /dev/block/sda31
     chmod 0660 /dev/block/sda31
 
-on boot && property:ro.boot.ramdump=enable && property:ro.build.product=peridot
+on boot && property:ro.boot.ramdump=enable && property:ro.product.device=peridot
     chown root system /dev/block/sda31
     chmod 0660 /dev/block/sda31
+
+on boot && property:ro.boot.ramdump=enable && property:ro.product.device=amethyst
+    chown root system /dev/block/sda32
+    chmod 0660 /dev/block/sda32
 
 on boot && property:ro.boot.ramdump=enable && property:ro.product.device=aurora
     chown root system /dev/block/sda36
     chmod 0660 /dev/block/sda36
+
+on boot && property:ro.boot.ramdump=enable && property:ro.product.device=goku
+    chown root system /dev/block/sda34
+    chmod 0660 /dev/block/sda34
+
+on boot && property:ro.boot.ramdump=enable && property:ro.product.device=flourite
+    chown root system /dev/block/sda32
+    chmod 0660 /dev/block/sda32
 
 on boot
     # Allow access to dload sysfs node

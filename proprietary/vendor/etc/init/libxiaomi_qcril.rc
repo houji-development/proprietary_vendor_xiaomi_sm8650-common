@@ -5,6 +5,21 @@ on post-fs-data
     # for modem data file
     mkdir /data/vendor/modem 0777 radio radio
 
+on early-boot
+    #exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.xiaomi.modem.sh
+
+service xiaomi_modem_sh /vendor/bin/init.xiaomi.modem.sh
+    class late_start
+    user root
+    group root system radio
+    oneshot
+
+service xiaomi_modem_cust_sh /vendor/bin/init.xiaomi.modem.cust.sh
+    class late_start
+    user root
+    group root system radio
+    oneshot
+
 service diag_mdlog_auto_start /vendor/bin/diag_mdlog -q 0x2006 -j 1 -u -c -i -n 50
     class late_start
     user system
@@ -44,3 +59,9 @@ on property:persist.vendor.radio.close_wenkong=yes
 
 on property:ro.vendor.oem.ctacode=*
     setprop ro.ril.oem.ctacode ${ro.vendor.oem.ctacode}
+
+on property:debug.modem.mcrash_history_chmod=777
+    chmod 777 /data/vendor/ramdump/mcrash_history
+
+on property:debug.modem.modem_config_chmod=777
+    chmod 777 /data/vendor/modem_config

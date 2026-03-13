@@ -344,7 +344,12 @@ verify_pasr_support()
 enable_thp()
 {
 	# Enable THP
-	echo always > /sys/kernel/mm/transparent_hugepage/enabled
+	ProductName=`getprop ro.product.name`
+	if [ "$ProductName" == "zorn" ] || [ "$ProductName" == "shennong" ]; then
+		echo never > /sys/kernel/mm/transparent_hugepage/enabled
+	else
+		echo always > /sys/kernel/mm/transparent_hugepage/enabled
+	fi
 
 	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
 	MemTotal=${MemTotalStr:16:8}

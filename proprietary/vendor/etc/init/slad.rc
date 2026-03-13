@@ -1,5 +1,7 @@
 service slad /vendor/bin/slad
     class main
+    user root
+    group root
     socket slad stream 0666 root system
     disabled
 

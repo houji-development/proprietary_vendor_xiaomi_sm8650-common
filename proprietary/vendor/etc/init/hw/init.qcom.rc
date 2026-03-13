@@ -253,11 +253,11 @@ on boot
     chown system system /sys/class/mi_power/temp_aware
     # END Power_LogEnhance
 
-     # MIUI ADD: Performance_LogEnhance
-    chmod 0666 /dev/mi_exception_log
-    chown system system /proc/mi_log/binder_delay
-    chown system system /proc/mi_log/delay
-    # END Performance_LogEnhance
+    # MIUI ADD: Performance_UnfairMem
+    chmod 0666 /dev/mi_mem_engine
+    chown system root /proc/mi_mem_engine/scene_tid
+    chmod 0664 /dev/mi_mem_engine/scene_tid
+    # END Performance_UnfairMem
 
     # Create directory used for display
     # for backward compatibility
@@ -811,7 +811,7 @@ service wifi-crda /vendor/bin/init.crda.sh
 
 on property:sys.boot_completed=1
     start qcom-post-boot
-    #fix BUGO2-15424
+    #fix BUGN18UPW-186
     #start qti-testscripts
 
 on property:ro.vendor.ril.mbn_copy_completed=1

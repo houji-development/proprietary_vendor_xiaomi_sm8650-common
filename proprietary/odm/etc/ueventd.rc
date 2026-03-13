@@ -76,3 +76,5 @@ subsystem mi_display
 /dev/fm-ntag              0660   nfc        nfc
 /dev/nxp-ntag             0660   nfc        nfc
 
+#launch boost
+/dev/iorap_dev 0660 system system
