@@ -4,7 +4,6 @@
 
 soong_namespace {
     imports: [
-        "vendor/xiaomi/houji",
         "device/xiaomi/sm8650-common",
         "hardware/qcom-caf/wlan",
         "hardware/qcom-caf/sm8650",
