@@ -45,12 +45,12 @@
         <minimumHdrPercentOfScreen>0</minimumHdrPercentOfScreen>
         <sdrHdrRatioMap>
             <point>
-                <sdrNits>1.5</sdrNits>
-                <hdrRatio>5.3</hdrRatio>
+                <sdrNits>2.0</sdrNits>
+                <hdrRatio>2.25</hdrRatio>
             </point>
             <point>
                 <sdrNits>1200.0</sdrNits>
-                <hdrRatio>1</hdrRatio>
+                <hdrRatio>2.25</hdrRatio>
             </point>
         </sdrHdrRatioMap>
     </highBrightnessMode>

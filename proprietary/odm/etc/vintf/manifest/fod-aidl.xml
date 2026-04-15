@@ -48,14 +48,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <fqname>IMiFxTunnel/default</fqname>
     </hal>
     <hal format="aidl">
-        <name>com.fingerprints.fpc.extension</name>
-        <version>1</version>
-        <fqname>IFpcExtension/default</fqname>
-    </hal>
-    <hal format="aidl">
         <name>vendor.xiaomi.hardware.dtool1</name>
         <version>1</version>
         <fqname>IDtool/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>com.fingerprints.fpc.extension</name>
+        <version>1</version>
+        <fqname>IFpcExtension/default</fqname>
     </hal>
     <hal format="aidl">
         <name>vendor.qti.hardware.fingerprint</name>

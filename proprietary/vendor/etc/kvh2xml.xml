@@ -124,8 +124,6 @@
       <VALUE val="0xac000500" name="TianTongRX_RX_PP"/>
       <VALUE val="0xac000600" name="DevicePP_RX_SatelliteCall"/>
       <VALUE val="0xac000800" name="DEVICEPP_RX_VOICE_FLIP_FOLD"/>
-      <VALUE val="0xac002a00" name="Unkaraoke_Playback_Custom"/>
-      <VALUE val="0xac003001" name="Audio_MBDRC_3CH"/>
     </KEY>
     <KEY name="DevicePP_Tx" id="0xad000000" description="Tx Device Post/Pre Processing Chain">
       <VALUE val="0xad000001" name="Fluence_FFECNS"/>
@@ -191,7 +189,6 @@
       <VALUE val="0xad000d00" name="Record_Customized"/>
       <VALUE val="0xac000e00" name="DevicePP_TX_SatelliteCall"/>
       <VALUE val="0xad001000" name="Voice_Fluence_Endfire_Flip_Fold"/>
-      <VALUE val="0xad002100" name="Unkaraoke_Record_Custom"/>
       <VALUE val="0xad002000" name="DEVICEPP_TX_VPNR"/>
       <VALUE val="0xad003000" name="DEVICEPP_TX_VOICE_FLUENCE_SURROUND"/>
       <VALUE val="0xad001400" name="CUSTOM_ECNS_RAW" description="Used in NLPI use-cases for VUI with custom config"/>
@@ -220,8 +217,6 @@
       <VALUE val="0xd" name="Level_13"/>
       <VALUE val="0xe" name="Level_14"/>
       <VALUE val="0xf" name="Level_15"/>
-      <VALUE val="0x10" name="Level_16"/>
-      <VALUE val="0x11" name="Level_17"/>
     </KEY>
     <KEY name="USB_Vendor_Id" id="0xe6000000" description="Usb_Vendor_Id">
       <VALUE val="0x0" name="USB_PROD_0"/>
@@ -428,8 +423,6 @@
       <VALUE val="0x1" name="Voice"/>
       <VALUE val="0x2" name="Bypass"/>
       <VALUE val="0x3" name="Cinema"/>
-      <VALUE val="0x4" name="LowPower"/>
-      <VALUE val="0x5" name="Clib"/>
     </KEY>
     <KEY name="SP_Dev_Map" id="0xbe000000" description="SpkrProtDevMap">
       <VALUE val="0x0" name="Disable_SP"/>
@@ -912,12 +905,6 @@
     </TAG>
     <TAG id="0xc000004c" name="ultrasound_gain" description="Ultrasound Signal gain for different configuration">
       <KEY id="0xe7000000" name="UltrasoundGain"/>
-    </TAG>
-    <TAG id="0xc000004d" name="LHDC_config" description="LHDC pcm formart config">
-      <KEY id="0xa6000000" name="BitWidth"/>
-    </TAG>
-    <TAG id="0xc000004e" name="LHDC_config_dpp" description="LHDC pcm device_pp formart config">
-      <KEY id="0xa6000000" name="BitWidth"/>
     </TAG>
     <TAG id="0xc0000001" name="sh_ep"/>
     <TAG id="0xc0000002" name="stream_input_media_format"/>
