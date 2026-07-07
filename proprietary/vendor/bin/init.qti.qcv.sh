@@ -55,21 +55,15 @@ elif [ "$soc_id" -eq 557 ] || [ "$soc_id" -eq 577 ]; then
     # MIUI DEL: CUST_PreloadCustomProp
     #setprop ro.vendor.media_performance_class 34
     # END CUST_PreloadCustomProp
-elif [ "$soc_id" -eq 632 ]; then
+elif [ "$soc_id" -eq 632 ] || [ "$soc_id" -eq 643 ]; then
     setprop ro.vendor.qti.soc_name cliffs
     setprop ro.vendor.qti.soc_model SM7675
-elif [ "$soc_id" -eq 614 ]; then
+elif [ "$soc_id" -eq 614 ] || [ "$soc_id" -eq 642 ]; then
     setprop ro.vendor.qti.soc_name cliffs
     setprop ro.vendor.qti.soc_model SM8635
     # MIUI DEL: CUST_PreloadCustomProp
     # setprop ro.vendor.media_performance_class 34
     # END CUST_PreloadCustomProp
-elif [ "$soc_id" -eq 642 ]; then
-    setprop ro.vendor.qti.soc_name cliffs
-    setprop ro.vendor.qti.soc_model SM8635P
-elif [ "$soc_id" -eq 643 ]; then
-    setprop ro.vendor.qti.soc_name cliffs
-    setprop ro.vendor.qti.soc_model SM7675P
 elif [ "$soc_id" -eq 519 ] || [ "$soc_id" -eq 536 ] || [ "$soc_id" -eq 600 ] || [ "$soc_id" -eq 601 ]; then
     setprop ro.vendor.qti.soc_name kalama
     setprop ro.vendor.qti.soc_model SM8550

@@ -53,13 +53,11 @@ case "$target" in
         setprop vendor.media.target_variant "_kalama"
         ;;
     "pineapple")
-        setprop vendor.mm.target.enable.qcom_parser 524304
+        setprop vendor.mm.target.enable.qcom_parser 0
         case "$soc_hwid" in
             614|632|642|643)
                 setprop vendor.media.target_variant "_cliffs_v0"
-                if [ $build_codename -le "14" ]; then
-                    setprop vendor.netflix.bsp_rev "Q8635-38577-1"
-                fi
+                setprop vendor.netflix.bsp_rev "Q8635-38577-1"
                 sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc/sku_version` 2> /dev/null
                 if [ $sku_ver -eq 1 ]; then
                     setprop vendor.media.target_variant "_cliffs_v1"
@@ -68,7 +66,7 @@ case "$target" in
                 ;;
             *)
                 setprop vendor.media.target_variant "_pineapple"
-                    setprop vendor.netflix.bsp_rev "Q8650-37577-1"
+                setprop vendor.netflix.bsp_rev "Q8650-37577-1"
                 ;;
         esac
         ;;
@@ -111,6 +109,7 @@ case "$target" in
         setprop vendor.mm.target.enable.qcom_parser 0
         case "$soc_hwid" in
             636|640|641|657|658)
+                setprop vendor.netflix.bsp_rev "Q7635-39449-1"
                 setprop vendor.media.target_variant "_volcano_v0"
                 sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc/sku_version` 2> /dev/null
                 if [ $sku_ver -eq 1 ]; then

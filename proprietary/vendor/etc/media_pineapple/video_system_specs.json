@@ -66,7 +66,7 @@
             // create a new thread to execute vpp start
             // if set to a positive integer like 2000, main thread will wait for vpp start at most 2s
             // if set to 0, just execute vpp start in main thread.
-            "vpp_max_retry_vpp_start_timeout": 2500,
+            "vpp_max_retry_vpp_start_timeout": 2500 ,
             // client can set thier own log mask by default
             "qc2_log_mask": 0,
             // Set the bufferpool fence wait time in case of decoder. The value is in milliseconds.
@@ -84,7 +84,7 @@
          ],
 
          "DolbyVision": {
-             "profiles": [4, 5, 8],
+             "profiles": [5, 8],
              "max_main_tier_level": 12,
              "max_high_tier_level": 12
          },
@@ -96,7 +96,9 @@
             //dolby post process
             "libqcodec2_dolbydecoderfilter.so",
             "libqcodec2_psfilter.so",
-            "libqcodec2_srfilter.so"
+            "libqcodec2_srfilter.so",
+            "libqcodec2_rffilter.so",
+            "libqcodec2_mocklutfilter.so"
         ],
 
         "QC2PreProcessingFilters": [
@@ -112,7 +114,9 @@
                 "c2.qti.vpp.filter",
                 "c2.qti.vpp.filter.secure",
                 "c2.mi.filter.ps",
-                "c2.mi.filter.sr"
+                "c2.mi.filter.sr",
+                "c2.mi.filter.rf",
+                "c2.mi.filter.mock.lut"
             ]
         },
 

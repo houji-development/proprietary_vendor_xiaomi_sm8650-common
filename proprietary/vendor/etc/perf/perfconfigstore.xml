@@ -35,6 +35,7 @@ ________________________________________________________________________________
                 <!-- MIUI ADD: Performance_BoostFramework -->
                 <Prop Name="vendor.iop.enable_uxe" Value="0" />
                 <!-- END Performance_BoostFramework -->
+                <Prop Name="ro.vendor.wlc.exit.timeout" Value="120000"/>
                 <Prop Name="vendor.debug.enable.lm" Value="true" />
                 <Prop Name="vendor.enable.prefetch" Value="false" />
                 <!-- MIUI MOD: Performance_BoostFramework -->
@@ -99,12 +100,9 @@ ________________________________________________________________________________
                 <Prop Name="vendor.appcompact.delta_rss_throttle_kb" Value="8000" />
                 <Prop Name="vendor.perf.topAppRenderThreadBoost.enable" Value="false" Target="pineapple,cliffs" />
                 <!-- MIUI MOD: Touch_MIUITouchFrame -->
-                <Prop Name="vendor.perf.phr.enable" Value="0" Target="pineapple,cliffs"/>
+                <Prop Name="vendor.perf.phr.enable" Value="1" Target="pineapple,cliffs"/>
                 <Prop Name="vendor.perf.phr.hr_min_rate" Value="0.5" Target="pineapple,cliffs"/>
-                <Prop Name="vendor.perf.pfar2.enable" Value="0" Target="pineapple,cliffs"/>
-                <Prop Name="vendor.perf.pfar2.boost_level" Value="1" Target="pineapple,cliffs"/>
-                <Prop Name="vendor.perf.pfar2.disable_pl" Value="1" Target="pineapple,cliffs"/>
-                <Prop Name="vendor.perf.pfar2.disable_core_ctl" Value="1" Target="pineapple,cliffs"/>
+		<Prop Name="vendor.perf.phr.hr_min_rate_high" Value="1.3" Target="pineapple,cliffs"/>
                 <!-- END Touch_MIUITouchFrame -->
                 <Prop Name="ro.vendor.perf.splh" Value="none" Target="pineapple,cliffs" />
                 <Prop Name="ro.vendor.perf.qhf" Value="true" Target="pineapple,cliffs"/>

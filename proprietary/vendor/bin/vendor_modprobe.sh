@@ -54,14 +54,16 @@ do
 
 	wait
 
-	for i in `seq 5`; do
-		lsmod | grep msm_eva
-		if [ "$?" -eq "0" ]; then
-			break
-		fi
-		${MODPROBE} -b -d ${dir} -a msm-eva.ko > /dev/null
-		sleep 0.5
-	done
+	if [ -e ${dir}/msm-eva.ko ]; then
+		for i in `seq 5`; do
+			lsmod | grep msm_eva
+			if [ "$?" -eq "0" ]; then
+				break
+			fi
+			${MODPROBE} -b -d ${dir} -a msm-eva.ko > /dev/null
+			sleep 0.5
+	  	done
+	fi
 
 	setprop vendor.all.modules.ready 1
 	exit 0

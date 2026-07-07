@@ -786,7 +786,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/audio.primary.pineapple.so",
             ],
             shared_libs: [
-                "libaudioroute-v34",
                 "libbase",
                 "liblog",
                 "libcutils",
@@ -803,6 +802,7 @@ cc_prebuilt_library_shared {
                 "libhardware_legacy",
                 "libultrasound_notify",
                 "libresampler",
+                "libar-gpr",
                 "libmispowerop",
                 "libxlog",
                 "libaudiocloudctrl",
@@ -812,7 +812,9 @@ cc_prebuilt_library_shared {
                 "libstagefright_foundation",
                 "libmisfpsop",
                 "libmisops",
+                "vendor.qti.hardware.pal@1.0-impl",
                 "vendor.qti.hardware.pal@1.0",
+                "vendor.qti.hardware.AGMIPC@1.0-impl",
                 "vendor.qti.hardware.AGMIPC@1.0",
                 "libvoipspacespeech",
                 "libc++",
@@ -823,7 +825,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "hw",
     prefer: true,
     soc_specific: true,
@@ -2221,6 +2222,7 @@ cc_prebuilt_library_shared {
                 "libQSEEComAPI",
                 "libEseUtils",
                 "libbinder_ndk",
+                "libstnfc-streset",
                 "libc++",
                 "libc",
                 "libm",
@@ -2768,7 +2770,7 @@ cc_prebuilt_library_shared {
                 "libEGL",
                 "libGLESv2",
                 "libGLESv3",
-                "libtensorflowlite_c",
+                "libtensorflowlite_c_vendor",
                 "libm",
                 "libc",
             ],
@@ -2910,7 +2912,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -3043,9 +3044,12 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libagm.so",
             ],
             shared_libs: [
+                "libar-gsl",
                 "liblog",
                 "libcutils",
+                "liblx-osal",
                 "libaudioroute",
+                "libats",
                 "libarmemlog",
                 "libmisight",
                 "libxlog",
@@ -3060,7 +3064,33 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libagmmixer",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libagmmixer.so",
+            ],
+            shared_libs: [
+                "libtinyalsa",
+                "libexpat",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -3172,6 +3202,87 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libar-acdb",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libar-acdb.so",
+            ],
+            shared_libs: [
+                "liblx-osal",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libar-gpr",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libar-gpr.so",
+            ],
+            shared_libs: [
+                "liblx-osal",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libar-gsl",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libar-gsl.so",
+            ],
+            shared_libs: [
+                "liblx-osal",
+                "libar-acdb",
+                "liblx-ar_util",
+                "libar-gpr",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libar-pal",
     owner: "xiaomi",
     strip: {
@@ -3183,11 +3294,14 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libar-pal.so",
             ],
             shared_libs: [
+                "libar-gsl",
                 "liblog",
                 "libexpat",
-                "libaudioroute",
+                "liblx-osal",
+                "libaudioroute-v34",
                 "libcutils",
                 "libutilscallstack",
+                "libagmclient",
                 "libaudioroute_ext",
                 "libvui_intf",
                 "libarmemlog",
@@ -3208,7 +3322,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -3227,6 +3340,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libexpat",
+                "liblx-osal",
                 "libc++",
                 "libc",
                 "libm",
@@ -3235,7 +3349,36 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libats",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libats.so",
+            ],
+            shared_libs: [
+                "liblx-osal",
+                "libutils",
+                "libcutils",
+                "libdiag",
+                "libar-gsl",
+                "libar-acdb",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -3627,7 +3770,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblog",
                 "libVoiceSdk",
-                "libtensorflowlite_c",
+                "libtensorflowlite_c_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -3882,6 +4025,7 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-ndk",
                 "vendor.qti.hardware.data.cneaidlservice.internal.api-V1-ndk",
                 "vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk",
+                "libwpa_client",
                 "libc++",
                 "libc",
                 "libm",
@@ -4407,6 +4551,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libcutils",
                 "libutils",
+                "android.hardware.graphics.composer3-V3-ndk",
                 "libmisight",
                 "libc++",
                 "libc",
@@ -4416,7 +4561,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -4549,7 +4693,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libdlbdsservice.so",
             ],
             shared_libs: [
-                "libbinder_shim",
+                "libstagefright_foundation-v33",
                 "libutils",
                 "libcutils",
                 "libstagefright_foundation",
@@ -4585,7 +4729,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libdlbpreg.so",
             ],
             shared_libs: [
-                "libbinder_shim",
+                "libstagefright_foundation-v33",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -4810,7 +4954,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libbinder",
                 "libdrm",
-                "libtinyxml2",
+                "libtinyxml2-v34",
                 "libdisplaydebug",
                 "libhidlbase",
                 "android.frameworks.sensorservice@1.0",
@@ -6011,6 +6155,7 @@ cc_prebuilt_library_shared {
                 "libexpat",
                 "liblog",
                 "libar-pal",
+                "audio.primary.pineapple",
                 "libagm",
                 "libc++",
                 "libc",
@@ -6020,7 +6165,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -6272,7 +6416,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblog",
                 "libVoiceSdk",
-                "libtensorflowlite_c",
+                "libtensorflowlite_c_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -7084,6 +7228,66 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "liblx-ar_util",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblx-ar_util.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "liblx-osal",
+                "libxlog",
+                "libmisight",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblx-osal",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblx-osal.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libxlog",
+                "libdiag",
+                "libion",
+                "libpdmapper",
+                "libpdnotifier",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libmasc",
     owner: "xiaomi",
     strip: {
@@ -7101,6 +7305,7 @@ cc_prebuilt_library_shared {
                 "libcne",
                 "libqmi",
                 "libqmiservices",
+                "libwpa_client",
                 "libandroid_net",
                 "libcneqmiutils",
                 "libcutils",
@@ -7135,9 +7340,12 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libagm",
                 "libaudioroute",
+                "libar-acdb",
                 "liblog",
                 "libcutils",
+                "libats",
                 "libexpat",
+                "liblx-osal",
                 "libtinyalsa",
                 "libc++",
                 "libc",
@@ -7147,7 +7355,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -8891,57 +9098,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libprotobuf-cpp-full-21.7",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libprotobuf-cpp-full-21.7.so",
-            ],
-            shared_libs: [
-                "libz",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libprotobuf-cpp-lite-21.7",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libprotobuf-cpp-lite-21.7.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libpsmoptfeature",
     owner: "xiaomi",
     strip: {
@@ -9182,6 +9338,7 @@ cc_prebuilt_library_shared {
                 "libqc2audio_basecodec",
                 "libcodec2_vndk",
                 "libstagefright_foundation",
+                "libpalclient",
                 "libc++",
                 "libc",
                 "libm",
@@ -9901,6 +10058,7 @@ cc_prebuilt_library_shared {
                 "libqcodec2_filterbase",
                 "libqcodec2_platform",
                 "qti.video.utils.videobufferlayout",
+                "libstagefright_foundation",
                 "libc++",
                 "libc",
                 "libm",
@@ -9936,6 +10094,7 @@ cc_prebuilt_library_shared {
                 "libqcodec2_filterbase",
                 "libqcodec2_platform",
                 "qti.video.utils.videobufferlayout",
+                "libstagefright_foundation",
                 "libc++",
                 "libc",
                 "libm",
@@ -10152,9 +10311,9 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "qcrilInterfaces",
                 "libxiaomi_qcril",
+                "libcutils",
                 "libhidlbase",
                 "libqcrilNrFramework",
-                "libcutils",
                 "liblog",
                 "libutils",
                 "qcrild_libqcrilnrutils",
@@ -13034,7 +13193,7 @@ cc_prebuilt_library_shared {
                 "libdisplaydebug",
                 "libsdm-color",
                 "libbinder",
-                "libtinyxml2",
+                "libtinyxml2-v34",
                 "libsdmutils",
                 "libdrm",
                 "libdigital-dimming",
@@ -13622,6 +13781,70 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libstnfc-auth",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libstnfc-auth.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libcutils",
+                "libhardware",
+                "libhardware_legacy",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "nfc_nci.st21nfc.st",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libstnfc-streset",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libstnfc-streset.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libbase",
+                "libcrypto",
+                "libutils",
+                "libbinder",
+                "libcutils",
+                "libbinder_ndk",
+                "android.hardware.nfc-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libstreamparser",
     owner: "xiaomi",
     strip: {
@@ -13921,7 +14144,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libtensorflowlite_c",
+    name: "libtensorflowlite_c_vendor",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -13929,7 +14152,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/libtensorflowlite_c.so",
+                "proprietary/vendor/lib64/libtensorflowlite_c_vendor.so",
             ],
             shared_libs: [
                 "libm",
@@ -14717,6 +14940,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libcutils",
+                "liblx-osal",
                 "libc++",
                 "libc",
                 "libm",
@@ -14725,7 +14949,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -15621,6 +15844,10 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libcutils",
+                "libbinder_ndk",
+                "vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk",
+                "libbinder",
+                "libutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -16645,7 +16872,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/soundfx/libdlbvol.so",
             ],
             shared_libs: [
-                "libbinder_shim",
+                "libstagefright_foundation-v33",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -16764,7 +16991,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/soundfx/libhwdap.so",
             ],
             shared_libs: [
-                "libbinder_shim",
+                "libstagefright_foundation-v33",
                 "libspatializerparamstorage",
                 "liblog",
                 "libutils",
@@ -17830,6 +18057,40 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.AGMIPC@1.0-impl",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "libutils",
+                "liblog",
+                "libcutils",
+                "libhardware",
+                "libbase",
+                "libar-gsl",
+                "vendor.qti.hardware.AGMIPC@1.0",
+                "libutilscallstack",
+                "libagm",
                 "libc++",
                 "libc",
                 "libm",
@@ -21939,37 +22200,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.qegahal-impl",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.qegahal-impl.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "vendor.qti.qegahal-V1-ndk_platform",
-                "liblog",
-                "libcutils",
-                "libbinder_ndk",
-                "libbase",
-                "android.hardware.thermal-V1-ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.qesdhal-impl",
     owner: "xiaomi",
     strip: {
@@ -22616,6 +22846,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "xiaomi.system.hypsys.common-V1-ndk",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/xiaomi.system.hypsys.common-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.radio.internal.deviceinfo@1.0",
     owner: "xiaomi",
     strip: {
@@ -22701,7 +22956,7 @@ cc_prebuilt_library_shared {
                 "vendor.qti.imsrtpservice@3.1",
                 "libbinder",
                 "libbinder_ndk",
-                "vendor.qti.ImsRtpService-V1-ndk",
+                "vendor.qti.ImsRtpService-V2-ndk",
                 "libdiag_system",
                 "libcutils",
                 "libutils",
@@ -22952,6 +23207,32 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.ImsRtpService-V2-ndk",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.ImsRtpService-V2-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "android.hardware.common-V2-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.diaghal@1.0",
     owner: "xiaomi",
     strip: {
@@ -23171,6 +23452,10 @@ cc_prebuilt_library_shared {
                 "libhistprocess",
                 "libdisplaylog",
                 "libadaptivehdr",
+                "libbinder_ndk",
+                "vendor.xiaomi.hardware.framecapturemanager-V1-ndk",
+                "libfcmintf",
+                "libframecapturemanager",
                 "libqservice",
                 "libsdm-disp-vndapis",
                 "libgrallocutils",
@@ -23479,30 +23764,6 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/odm/lib64/libQnnHtpNetRunExtensions.so",
-            ],
-            shared_libs: [
-                "libdl",
-                "liblog",
-                "libm",
-                "libc",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libQnnHtpPrepare",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libQnnHtpPrepare.so",
             ],
             shared_libs: [
                 "libdl",
@@ -23873,6 +24134,33 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libbarrage",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libbarrage.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libtflite",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libclient2slpi.notifier",
     owner: "xiaomi",
     strip: {
@@ -23948,6 +24236,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libtinyalsa",
+                "audio.primary.pineapple",
                 "libagm",
                 "libc++",
                 "libc",
@@ -24083,6 +24372,37 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libfcmintf",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libfcmintf.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libbinder",
+                "libbinder_ndk",
+                "libui",
+                "vendor.xiaomi.hardware.framecapturemanager-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libflatmode",
     owner: "xiaomi",
     strip: {
@@ -24135,6 +24455,45 @@ cc_prebuilt_library_shared {
                 "libmiXmlParser",
                 "libdisplayconfig.qti",
                 "libmi-stc-HW-modulate",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libframecapturemanager",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libframecapturemanager.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libbinder",
+                "libutils",
+                "libcutils",
+                "libutilscallstack",
+                "liblog",
+                "libbinder_ndk",
+                "libhardware",
+                "libstagefright_foundation",
+                "vendor.xiaomi.hardware.framecapturemanager-V1-ndk",
+                "libui",
+                "libbarrage",
+                "vendor.qti.hardware.display.config-V7-ndk",
+                "vendor.display.config@2.0",
+                "libdisplayconfig.qti",
                 "libc++",
                 "libc",
                 "libm",
@@ -24921,6 +25280,37 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "nfc_nci.st21nfc.st",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/nfc_nci.st21nfc.st.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libcutils",
+                "libhardware",
+                "libhardware_legacy",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "sensors.touch.detect",
     owner: "xiaomi",
     strip: {
@@ -24990,6 +25380,57 @@ cc_prebuilt_library_shared {
                 "libizat_client_api",
                 "libloc_base_util",
                 "libloc_mq_client",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.xiaomi.hardware.framecapturemanager-V1-ndk",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/vendor.xiaomi.hardware.framecapturemanager-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "android.hardware.common-V2-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -25439,6 +25880,15 @@ dex_import {
     system_ext_specific: true,
 }
 
+dex_import {
+    name: "xiaomi-modem-common",
+    owner: "xiaomi",
+    jars: [
+        "proprietary/system_ext/framework/xiaomi-modem-common.jar",
+    ],
+    system_ext_specific: true,
+}
+
 prebuilt_etc_xml {
     name: "ImsRtpService-aidl.xml",
     owner: "xiaomi",
@@ -25551,6 +26001,15 @@ prebuilt_etc_xml {
     name: "atfwd-saidl.xml",
     owner: "xiaomi",
     src: "proprietary/vendor/etc/vintf/manifest/atfwd-saidl.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "bttpi-saidl.xml",
+    owner: "xiaomi",
+    src: "proprietary/vendor/etc/vintf/manifest/bttpi-saidl.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -25971,15 +26430,6 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "vendor.qti.qegahal-service.xml",
-    owner: "xiaomi",
-    src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.qegahal-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "vendor.qti.qspmhal-service.xml",
     owner: "xiaomi",
     src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml",
@@ -26004,15 +26454,6 @@ prebuilt_etc_xml {
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "android.hardware.gnss-aidl-service-qti.xml",
-    owner: "xiaomi",
-    src: "proprietary/odm/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    device_specific: true,
 }
 
 prebuilt_etc_xml {
@@ -26055,6 +26496,15 @@ prebuilt_etc_xml {
     name: "manifest_vendor.xiaomi.hardware.mlipay.xml",
     owner: "xiaomi",
     src: "proprietary/odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    device_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "misensor_camera.xml",
+    owner: "xiaomi",
+    src: "proprietary/odm/etc/vintf/manifest/misensor_camera.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     device_specific: true,
@@ -26297,6 +26747,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/cnd",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "libdiag",
                 "libcutils",
                 "liblog",
@@ -26406,6 +26857,7 @@ cc_prebuilt_binary {
                 "libutils",
                 "libbinder",
                 "libdisplayfeatureservice",
+                "libtflite",
                 "libc++",
                 "libc",
                 "libm",
@@ -26799,6 +27251,7 @@ cc_prebuilt_binary {
                 "libutils",
                 "libbinder_ndk",
                 "android.hardware.secure_element-V1-ndk",
+                "libstnfc-streset",
                 "libc++",
                 "libc",
                 "libm",
@@ -28258,6 +28711,7 @@ cc_prebuilt_binary {
                 "libloc_mq_client",
                 "liblog",
                 "libnl",
+                "libwpa_client",
                 "liblowi_common",
                 "libqmi_cci",
                 "libqmi_common_so",
@@ -28639,7 +29093,7 @@ cc_prebuilt_binary {
                 "libhidlbase",
                 "libhidltransport",
                 "libpowercore",
-                "libtinyxml2",
+                "libtinyxml2-v34",
                 "vendor.qti.hardware.perf2-V1-ndk",
                 "libbinder_ndk",
                 "vendor.qti.hardware.power.powermodule-V1-ndk",
@@ -28896,6 +29350,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/qms",
             ],
             shared_libs: [
+                "libbinder_shim",
                 "libavservices_minijail",
                 "libcutils",
                 "liblog",
@@ -28909,6 +29364,7 @@ cc_prebuilt_binary {
                 "libidl",
                 "libandroid_net",
                 "libhidlbase",
+                "libwpa_client",
                 "libbinder",
                 "libbinder_ndk",
                 "libjsoncpp",
@@ -29888,66 +30344,6 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "vendor.qti.qegahal-service",
-    owner: "xiaomi",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/vendor.qti.qegahal-service",
-            ],
-            shared_libs: [
-                "vendor.qti.qegahal-V1-ndk_platform",
-                "vendor.qti.qegahal-impl",
-                "liblog",
-                "libutils",
-                "libbinder_ndk",
-                "libbase",
-                "android.hardware.thermal-V1-ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "vendor.qti.qspa-service",
-    owner: "xiaomi",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/vendor.qti.qspa-service",
-            ],
-            shared_libs: [
-                "libbase",
-                "liblog",
-                "libcutils",
-                "libbinder_ndk",
-                "vendor.qti.hardware.qspa-V1-ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
     name: "vendor.qti.qspmhal-service",
     owner: "xiaomi",
     target: {
@@ -30342,6 +30738,7 @@ cc_prebuilt_binary {
                 "libutils",
                 "libbase",
                 "liblog",
+                "libxml2",
                 "libbinder_ndk",
                 "vendor.xiaomi.hw.touchfeature-V1-ndk_platform",
                 "android.frameworks.sensorservice@1.0",
@@ -30386,6 +30783,7 @@ cc_prebuilt_binary {
                 "libjsoncpp",
                 "libsensorslog",
                 "libbinder_ndk",
+                "libbinder",
                 "libqsh",
                 "android.hardware.sensors@2.0",
                 "android.hardware.sensors@2.0-ScopedWakelock",
@@ -30401,6 +30799,7 @@ cc_prebuilt_binary {
                 "vendor.qti.hardware.display.mapperextensions@1.1",
                 "libdisplayconfig.qti",
                 "libmisight",
+                "xiaomi.system.hypsys.common-V1-ndk",
                 "libc++",
                 "libc",
                 "libm",
