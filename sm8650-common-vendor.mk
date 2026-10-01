@@ -1255,7 +1255,6 @@ PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.aidl.tidaservice-V1-ndk_platform \
     vendor.xiaomi.hardware.blackbox-V1-ndk \
     vendor.xiaomi.hardware.display.mihwcextension-V1-ndk \
-    vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk \
     vendor.xiaomi.hardware.fx.tunnel-V1-ndk \
     vendor.xiaomi.hardware.mfidoca-V1-ndk_platform \
     vendor.xiaomi.hardware.mlipay-V1-ndk_platform \
@@ -1336,7 +1335,6 @@ PRODUCT_PACKAGES += \
     libsre \
     libtensorflowlite_touch_c \
     libtida \
-    libtouchreport \
     libtouchsensor \
     libtruetone \
     libvideomode \
@@ -1615,8 +1613,7 @@ PRODUCT_PACKAGES += \
     vendor.xiaomi.sensor.citsensorservice.aidl \
     mlipayd \
     mtd \
-    tidad \
-    toucheventcheck
+    tidad
 
 PRODUCT_PACKAGES += \
     system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so \
